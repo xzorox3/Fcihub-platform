@@ -1,0 +1,67 @@
+/* Simple Courses Swiper Styles */
+
+/* Container */
+.courses-swiper {
+  padding-bottom: 50px !important;
+}
+
+/* Swiper Slides */
+.courses-swiper .swiper-slide {
+  height: auto !important;
+}
+
+/* Swiper Wrapper */
+.courses-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+/* Swiper Pagination */
+.courses-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.courses-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(156, 163, 175, 0.5);
+  opacity: 1;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+}
+
+.courses-swiper .swiper-pagination-bullet-active {
+  background: #3b82f6;
+  transform: scale(1.2);
+}
+
+/* Navigation Buttons */
+.courses-button-prev,
+.courses-button-next {
+  width: 40px !important;
+  height: 40px !important;
+  margin-top: -20px !important;
+}
+
+.courses-button-prev:after,
+.courses-button-next:after {
+  display: none !important;
+}
+
+/* Course Cards */
+.courses-swiper .swiper-slide > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .courses-swiper {
+    padding-bottom: 40px !important;
+  }
+
+  .courses-button-prev,
+  .courses-button-next {
+    display: none !important;
+  }
+}

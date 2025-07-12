@@ -1,0 +1,1160 @@
+{
+	"info": {
+		"_postman_id": "aa2bef9d-b496-43a6-bfad-68b5425e9eb0",
+		"name": "API Documentation #reference",
+		"description": "This template contains a boilerplate for documentation that you can quickly customize and reuse.\n\n### How to use this template:\n\n- Replace the content given brackets (()) with your API's details.\n- Tips are formatted in `codespan` - feel free to read and remove them.\n    \n\n---\n\n`Start with a brief overview of what your API offers.`\n\nThe ((product name)) provides many API products, tools, and resources that enable you to ((add product value here)).\n\n`You can also list the APIs you offer, link to the relevant pages, or do both in this section.`\n\n## **Getting started guide**\n\n`List the steps or points required to start using your APIs. Make sure to cover everything required to reach success with your API as quickly as possible.`\n\nTo start using the ((add APIs here)), you need to -\n\n`The points given below are from The Postman API's documentation. You can reference it to write your own getting started guide.`\n\n- You must use a valid API Key to send requests to the API endpoints. You can get your API key from Postman's [integrations dashboard](https://go.postman.co/settings/me/api-keys).\n- The API has [rate and usage limits](https://learning.postman.com/docs/developer/postman-api/postman-api-rate-limits/).\n- The API only responds to HTTPS-secured communications. Any requests sent via HTTP return an HTTP 301 redirect to the corresponding HTTPS resources.\n- The API returns request responses in JSON format. When an API request returns an error, it is sent in the JSON response as an error key.\n    \n\n## Authentication\n\n`Add details on the authorization keys/tokens required, steps that cover how to get them, and the relevant error codes.`\n\nThe ((product name)) API uses ((add your API's authorization type)) for authentication.\n\n`The details given below are from the Postman API's documentation. You can reference it to write your own authentication section.`\n\nPostman uses API keys for authentication. You can generate a Postman API key in the [API keys](https://postman.postman.co/settings/me/api-keys) section of your Postman account settings.\n\nYou must include an API key in each request to the Postman API with the X-Api-Key request header.\n\n### Authentication error response\n\nIf an API key is missing, malformed, or invalid, you will receive an HTTP 401 Unauthorized response code.\n\n## Rate and usage limits\n\n`Use this section to cover your APIs' terms of use. Include API limits, constraints, and relevant error codes, so consumers understand the permitted API usage and practices.`\n\n`The example given below is from The Postman API's documentation. Use it as a reference to write your APIs' terms of use.`\n\nAPI access rate limits apply at a per-API key basis in unit time. The limit is 300 requests per minute. Also, depending on your plan, you may have usage limits. If you exceed either limit, your request will return an HTTP 429 Too Many Requests status code.\n\nEach API response returns the following set of headers to help you identify your use status:\n\n| Header | Description |\n| --- | --- |\n| `X-RateLimit-Limit` | The maximum number of requests that the consumer is permitted to make per minute. |\n| `X-RateLimit-Remaining` | The number of requests remaining in the current rate limit window. |\n| `X-RateLimit-Reset` | The time at which the current rate limit window resets in UTC epoch seconds. |\n\n### 503 response\n\nAn HTTP `503` response from our servers indicates there is an unexpected spike in API access traffic. The server is usually operational within the next five minutes. If the outage persists or you receive any other form of an HTTP `5XX` error, [contact support](https://support.postman.com/hc/en-us/requests/new/).\n\n### **Need some help?**\n\n`Add links that customers can refer to whenever they need help.`\n\nIn case you have questions, go through our tutorials ((link to your video or help documentation here)). Or visit our FAQ page ((link to the relevant page)).\n\nOr you can check out our community forum, there’s a good chance our community has an answer for you. Visit our developer forum ((link to developer forum)) to review topics, ask questions, and learn from others.\n\n`You can also document or add links to libraries, code examples, and other resources needed to make a request.`",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29440014"
+	},
+	"item": [
+		{
+			"name": "Profile Data",
+			"item": [
+				{
+					"name": "Get Student Profile Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}user/profile",
+							"host": [
+								"{{base_url}}user"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Techer Profile Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}user/admin/profile",
+							"host": [
+								"{{base_url}}user"
+							],
+							"path": [
+								"admin",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "The `/me` endpoints let you manage information about the authenticated user."
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "سيرا",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "انثي",
+									"type": "text"
+								},
+								{
+									"key": "collage",
+									"value": "حاسبات و معلومات",
+									"type": "text"
+								},
+								{
+									"key": "university",
+									"value": "قناه السويس",
+									"type": "text"
+								},
+								{
+									"key": "GPA",
+									"value": "3.2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sira3@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "major",
+									"value": "computer science",
+									"type": "text"
+								},
+								{
+									"key": "universityId",
+									"value": "12345",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}auth/register-user",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"register-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json();",
+									"pm.environment.set(\"token\",response.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "sira3@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}auth/login-user",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"login-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Teacher",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var response = pm.response.json();",
+									"pm.environment.set(\"token\",response.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "hassan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}auth/login-admin",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"login-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "دكتور حسن",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hassan@gmai;.com",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "ذكر",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}auth/register-admin",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"register-admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forget Password",
+			"item": [
+				{
+					"name": "Forget Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}auth/forgot-password",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Reset Code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}auth/verify-reset-code",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"verify-reset-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}auth/reset-password",
+							"host": [
+								"{{base_url}}auth"
+							],
+							"path": [
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Major",
+			"item": [
+				{
+					"name": "Create Major",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Software",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}major",
+							"host": [
+								"{{base_url}}major"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Major By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}major/1",
+							"host": [
+								"{{base_url}}major"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Majors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}major",
+							"host": [
+								"{{base_url}}major"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Level",
+			"item": [
+				{
+					"name": "Create Level",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "levelNumber",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "majorId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}level",
+							"host": [
+								"{{base_url}}level"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Levels Related To Major Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}level",
+							"host": [
+								"{{base_url}}level"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Level Related To Major",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}level/1",
+							"host": [
+								"{{base_url}}level"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sub Major",
+			"item": [
+				{
+					"name": "Create Sub Major Relate By Level & Major",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Computer Science",
+									"type": "text"
+								},
+								{
+									"key": "levelId",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}sub-major",
+							"host": [
+								"{{base_url}}sub-major"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}sub-major",
+							"host": [
+								"{{base_url}}sub-major"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sub Major By id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}sub-major/1",
+							"host": [
+								"{{base_url}}sub-major"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "programming",
+									"type": "text"
+								},
+								{
+									"key": "levelId",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "majorId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "subMajorId",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}course",
+							"host": [
+								"{{base_url}}course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}course",
+							"host": [
+								"{{base_url}}course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}course/1",
+							"host": [
+								"{{base_url}}course"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Add Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "new event",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Fci event",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "10-5-2025",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1efc05e7-de2a-4940-83ce-2a6397981879"
+								},
+								{
+									"key": "type",
+									"value": "FCI",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}event",
+							"host": [
+								"{{base_url}}event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}event?title",
+							"host": [
+								"{{base_url}}event"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": null
+								},
+								{
+									"key": "description",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "FCI",
+									"disabled": true
+								},
+								{
+									"key": "date",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}event/2",
+							"host": [
+								"{{base_url}}event"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}event/1",
+							"host": [
+								"{{base_url}}event"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lecture Time",
+			"item": [
+				{
+					"name": "Create Lecture Time",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "courseName",
+									"value": "الحكومه الالكترونيه",
+									"type": "text"
+								},
+								{
+									"key": "DoctorName",
+									"value": "د/عمر سالم",
+									"type": "text"
+								},
+								{
+									"key": "rangeTime",
+									"value": "10:00 صباحًا - 12:00 ظهرًا",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}lecture-time",
+							"host": [
+								"{{base_url}}lecture-time"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  All Lectures Time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}lecture-time",
+							"host": [
+								"{{base_url}}lecture-time"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Leture Time",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "courseName",
+									"value": " قواعد البيانات",
+									"type": "text"
+								},
+								{
+									"key": "DoctorName",
+									"value": "د/ اسامه فاروق",
+									"type": "text"
+								},
+								{
+									"key": "rangeTime",
+									"value": "1:00 ظهرًا - 3:00 عصرًا",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}lecture-time/2",
+							"host": [
+								"{{base_url}}lecture-time"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Lecture Time By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}lecture-time/3",
+							"host": [
+								"{{base_url}}lecture-time"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Lecture Time",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}lecture-time/2",
+							"host": [
+								"{{base_url}}lecture-time"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Material Folder",
+			"item": [
+				{
+					"name": "Create Material Folder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "محاضرات",
+									"type": "text"
+								},
+								{
+									"key": "courseId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}material-folder",
+							"host": [
+								"{{base_url}}material-folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Materail Folders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}material-folder",
+							"host": [
+								"{{base_url}}material-folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course Material Folders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}material-folder/1",
+							"host": [
+								"{{base_url}}material-folder"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manage Upload Materials",
+			"item": [
+				{
+					"name": "Uploud Course Material With Folder id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1efdb26b-7712-4320-a676-ae67ed2835f2"
+								},
+								{
+									"key": "name",
+									"value": "lecture 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}material-file/1/upload",
+							"host": [
+								"{{base_url}}material-file"
+							],
+							"path": [
+								"1",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Files In Folder",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}material-file/by-folder/1",
+							"host": [
+								"{{base_url}}material-file"
+							],
+							"path": [
+								"by-folder",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://farming-simulator.pstmn.io"
+		}
+	]
+}
